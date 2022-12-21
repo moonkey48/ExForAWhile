@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ExListPage from './pages/ExListPage';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import ExDetailPage from './pages/ExDetailPage';
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(
@@ -17,6 +18,8 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<ExListPage/>} />
+          <Route path='/exlist' element={<ExListPage/>} />
+          <Route path='/exlist/:id' element={<ExDetailPage/>} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

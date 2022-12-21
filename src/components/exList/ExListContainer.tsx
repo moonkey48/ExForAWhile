@@ -9,7 +9,6 @@ const ExListContainer = () => {
     const [exlist, setExlist] = useState<ExList>([])
     const {data, isLoading} = useQuery(['exList'], fetchExList, {
         refetchOnWindowFocus:false,
-        refetchOnMount: false,
         onSuccess(data: ExList) {
             console.log('data loaded')
             setExlist(data)
