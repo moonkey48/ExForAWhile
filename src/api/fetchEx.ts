@@ -6,10 +6,3 @@ export const fetchExList = async () => {
         return data.data
     })
 }
-
-export const fetchExItem = async (id:string) => {
-    return await axios(`http://localhost:3001/exlist/${id}`)
-    .then(data => {
-        return data.data
-    })
-}
