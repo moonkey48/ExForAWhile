@@ -1,9 +1,9 @@
-import { Image } from 'antd';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { fetchExList } from '../../api/fetchEx';
 import { ExList } from '../../types/ExType';
-import { exItemFallback } from '../fallback/exFallback';
+import ExItem from '../exItem/ExItem';
+
 
 const ExListContainer = () => {
     const [exlist, setExlist] = useState<ExList>([])
@@ -21,11 +21,7 @@ const ExListContainer = () => {
         {isLoading && <h1>loading...</h1>}
         {exlist &&  <ul>{
             exlist.map(exItem => {
-                return <li key={exItem._id}>
-                    {exItem.name}
-                    <Image src={exItem.picture} width="200px" height="200px"
-                    fallback={exItemFallback} />
-                </li>
+                return  <ExItem key={exItem._id} item={exItem} />
             })
             }</ul> }
         </>
