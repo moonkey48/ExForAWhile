@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ExListPage from './pages/ExListPage';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import ExDetailPage from './pages/ExDetailPage';
 import MoodColor from './components/test/moodColor';
-import MakeImg from './components/makeImg/makeImg';
+import MakeImgContainer from './components/makeImg/makeImgContainer';
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(
@@ -23,7 +22,7 @@ root.render(
           <Route path='/exlist' element={<ExListPage/>} />
           <Route path='/exlist/:id' element={<ExDetailPage/>} />
           <Route path='/test' element={<MoodColor/>} />
-          <Route path='/img' element={<MakeImg/>} />
+          <Route path='/img' element={<MakeImgContainer/>} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
