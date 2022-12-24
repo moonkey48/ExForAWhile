@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ExListPage from './pages/ExListPage';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import ExDetailPage from './pages/ExDetailPage';
+import MoodColor from './components/test/moodColor';
+import MakeImg from './components/makeImg/makeImg';
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(
@@ -20,6 +22,8 @@ root.render(
           <Route path='/' element={<ExListPage/>} />
           <Route path='/exlist' element={<ExListPage/>} />
           <Route path='/exlist/:id' element={<ExDetailPage/>} />
+          <Route path='/test' element={<MoodColor/>} />
+          <Route path='/img' element={<MakeImg/>} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
